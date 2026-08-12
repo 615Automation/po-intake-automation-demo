@@ -1,0 +1,41 @@
+name: Unattended PO intake
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  process-synthetic-pos:
+    name: Process synthetic POs
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out the sanitized demo
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install exact dependencies
+        run: npm ci
+
+      - name: Run the same PO engine unattended
+        run: npm run po:intake:batch
+
+      - name: Verify the engine controls
+        run: npm run test -- src/lib/po-intake/engine.test.ts
+
+      - name: Upload the processed results
+        uses: actions/upload-artifact@v4
+        with:
+          name: po-intake-results
+          path: artifacts/po-intake-results.json
+          if-no-files-found: error
+          retention-days: 14

@@ -1,0 +1,61 @@
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+/out/
+next-env.d.ts
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# env files — never commit real secrets; .env.example is the template
+.env
+.env.*
+!.env.example
+
+# vercel
+.vercel
+
+# generated unattended-run artifacts
+/artifacts/
+
+# internal planning material — never publish in the sanitized demo repository
+/615_AUTOMATION_PRODUCTIZABLE_BUILDS*.md
+/CONTEXT.md
+/GOAL_po_intake_demo.md
+/docs/
+
+# pre-existing gallery code is outside the sanitized public release
+/public/og.png
+/src/app/demos/custom-plugins/
+/src/app/demos/permit-signals/
+/src/app/demos/predictive-decisions/
+/src/app/enter/
+/src/app/presenter/
+/src/app/icon.svg
+/src/components/*
+!/src/components/lookbook-shell.tsx
+/src/lib/access.ts
+/src/lib/access.test.ts
+/src/lib/demos.ts
+/src/lib/excel-erp-plugin.ts
+/src/lib/excel-erp-plugin.test.ts
+/src/lib/lookbook.test.ts
+/src/lib/permit-signals/
+/src/lib/predictive-decisions/
+/src/proxy.ts
+
+# typescript
+*.tsbuildinfo
+
+.vercel

@@ -1,0 +1,26 @@
+# Internal and unrelated workspace material
+615_AUTOMATION_PRODUCTIZABLE_BUILDS*.md
+CONTEXT.md
+GOAL_po_intake_demo.md
+docs/
+artifacts/
+
+# Pre-existing gallery routes and code are not part of this release
+src/app/demos/custom-plugins/
+src/app/demos/permit-signals/
+src/app/demos/predictive-decisions/
+src/app/enter/
+src/app/presenter/
+src/app/icon.svg
+src/components/*
+!src/components/lookbook-shell.tsx
+src/lib/access.ts
+src/lib/access.test.ts
+src/lib/demos.ts
+src/lib/excel-erp-plugin.ts
+src/lib/excel-erp-plugin.test.ts
+src/lib/lookbook.test.ts
+src/lib/permit-signals/
+src/lib/predictive-decisions/
+src/proxy.ts
+public/og.png
